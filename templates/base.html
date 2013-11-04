@@ -1,0 +1,60 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<meta content="charset=utf-8" />
+{% block head %}
+  <title>{% block title %}Django Framework{% endblock %}</title>
+  {% block style %}
+  <link type="text/css" rel="stylesheet" href="{% static 'css/reset.css' %}" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  {% block extrastylesheets %}{% endblock extrastylesheets %}
+  {% endblock style %}
+  {% block scripts %}
+  <script type="text/javascript" src="{% static 'js/jquery-2.0.3.js' %}" ></script>
+  {% block extrascripts %}{% endblock extrascripts %}
+  {% endblock scripts %}
+{% endblock head %}
+
+{% block body %}
+<div id="wrapper">
+  <div id="content">
+    <header>
+      {% block header %}
+        <img id="logo" src="#">
+        <div id="info">
+          <ul id="navigation">
+            <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+            <li><a href="{% url 'home' %}">{% trans "Polls" %}</a></li>
+          </ul>
+        </div>
+      {% endblock header %}
+    </header>
+
+    <div id="content">
+      {% block content %}
+      <div class="main">
+        <h1>Block to replace</h1>
+        <p>This message will be replaced and will never be displayed to final users</p>
+      </div>
+      {% endblock content %}
+    </div>
+  </div>
+</div>
+
+<footer>
+  {% block footer %}
+    <div id="trademark">
+      <p>DjangoFW 2013 &reg.</p>
+    </div>
+    <div class="footer_content">
+      <div class="footer_left">
+      </div>
+      <div class="footer_center">
+      </div>
+      <div class="footer_right">
+      </div>
+    </div>
+  {% endblock footer %}
+</footer>
+{% endblock body %}
