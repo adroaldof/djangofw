@@ -74,13 +74,17 @@ The present tutorial assumes that you are familiar with command line tools and G
 
         cd djangofw
 
-3. Activate your virtual env
+4. Activate your virtual env
 
         workon djangofw
 
-3. Install needed requirements modules
+5. Install needed requirements modules
 
         pip install -r requirements.txt
+
+6. Make a database synchronization
+
+        python manage.py syncdb
 
 ---
 ###And you are good to go
