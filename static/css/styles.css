@@ -63,6 +63,23 @@ p {
   margin: 5px 0;
 }
 
+form input[type='reset'],
+form input[type='submit'],
+form input[type='button'] {
+  float: right;
+  width: 120px;
+  padding: 5px;
+  margin: 10px 0 0 5px;
+  font-size: 14px;
+  color: #6B6B6B;
+  cursor: pointer;
+  background-color: #D5D5D5;
+  border: 1px solid #AFAFAF;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
 
 /* Header */
 header {
