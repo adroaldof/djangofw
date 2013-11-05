@@ -63,6 +63,15 @@ p {
   margin: 5px 0;
 }
 
+ul {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+ul li {
+  line-height: 20px;
+}
+
 label {
   display: inline-block;
   padding-top: 5px;
