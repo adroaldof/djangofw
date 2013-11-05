@@ -164,6 +164,33 @@ ul#navigation li.current {
 }
 
 
+/* Content */
+#title {
+  line-height: 30px;
+  border-bottom: 1px solid #C4C7C8;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.subheading h2 {
+  text-align: center;
+}
+
+.subheading p {
+  text-align: right;
+}
+
+.main-content {
+  margin-left: 50px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+
 /* Footer */
 footer {
   width: 100%;
