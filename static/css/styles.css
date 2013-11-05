@@ -63,6 +63,12 @@ p {
   margin: 5px 0;
 }
 
+label {
+  display: inline-block;
+  padding-top: 5px;
+  font-size: 1.2em;
+}
+
 input[type="radio"] {
     display:none;
 }
