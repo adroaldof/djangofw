@@ -63,6 +63,24 @@ p {
   margin: 5px 0;
 }
 
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url('../images/check_radio.png') -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url('../images/check_radio.png') -57px top no-repeat;
+}
+
 form input[type='reset'],
 form input[type='submit'],
 form input[type='button'] {
