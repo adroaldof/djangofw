@@ -21,7 +21,7 @@
   <div id="content">
     <header>
       {% block header %}
-        <img id="logo" src="#">
+        <img id="logo" src="{% static 'images/logo.png' %}" alt="DjangoFW">
         <div id="info">
           <ul id="navigation">
             <li><a href="{% url 'index' %}">{% trans "Home" %}</a></li>
