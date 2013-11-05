@@ -8,4 +8,6 @@ urlpatterns = patterns('polls.views',
     url(r'^(?P<poll_id>\d+)$', 'detail', name='polls-detail'),
     # localhost:8000/polls/5/results
     url(r'^(?P<poll_id>\d+)/results$', 'results', name='polls-results'),
+    # localhost:8000/polls/5/vote
+    url(r'^(?P<poll_id>\d+)/vote$', 'vote', name='polls-vote'),
 )

@@ -27,3 +27,17 @@ def results(request, poll_id):
     })
 
 
+def vote(request, poll_id):
+    poll = get_object_or_404(Poll, id=poll_id)
+    try:
+        selected = poll.choice_set.get(pk=request.POST['choice'])
+    except KeyError, Choice.DoesNotExist:
+        return TemplateResponse(request, 'polls/details.html', {
+            'poll': poll,
+        })
+    else:
+        selected.votes += 1
+        selected.save()
+        return HttpResponseRedirect('/polls/' + poll_id + '/results')
+
+
