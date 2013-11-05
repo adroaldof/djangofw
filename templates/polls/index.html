@@ -4,6 +4,24 @@
 
 {% block content %}
 <div class="main">
-  <h1>{% trans "Available Polls" %}</h1>
+  <div id="title">
+    <h1>{% trans "Available Polls" %}</h1>
+  </div>
+  <div class="main-content">
+    <a href="{% url 'polls-create' %}">{% trans "Add Poll" %}</a>
+  </div>
+  {% if latests_poll_list %}
+  <div class="subheading">
+    <ul>
+      {% for poll in latests_poll_list %}
+        <li><a href="{% url 'polls-detail' poll.id %}">{{ poll.question }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% else %}
+  <div class="subheading">
+    <p>{% trans "No polls were found" %}
+  </div>
+  {% endif %}
 </div>
 {% endblock content %}
