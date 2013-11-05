@@ -18,40 +18,40 @@ body {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 3em;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 23px;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 2.2em;
   font-weight: bold;
 }
 
 h4 {
-  font-size: 19px;
+  font-size: 2em;
   font-weight: bold;
 }
 
 h5 {
-  font-size: 17px;
+  font-size: 1.7em
   font-weight: bold;
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 a:link,
 a:visited,
 a:active {
-  font-size: 12px;
-  color: #000;
+  font-size: 1.2em;
+  color: #636369;
   text-decoration: none;
 }
 
@@ -61,6 +61,56 @@ a:hover {
 
 p {
   padding: 5px 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+ul li {
+  line-height: 20px;
+}
+
+label {
+  display: inline-block;
+  padding-top: 5px;
+  font-size: 1.2em;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url('../images/check_radio.png') -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url('../images/check_radio.png') -57px top no-repeat;
+}
+
+form input[type='reset'],
+form input[type='submit'],
+form input[type='button'] {
+  float: right;
+  width: 120px;
+  padding: 5px;
+  margin: 10px 0 0 5px;
+  font-size: 14px;
+  color: #6B6B6B;
+  cursor: pointer;
+  background-color: #D5D5D5;
+  border: 1px solid #AFAFAF;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
 }
 
 
@@ -94,7 +144,7 @@ ul#navigation li {
   float: left;
   margin: 5px;
   border: 1px solid #C4C7C8;
-  padding: 10px;
+  padding: 5px;
   border-radius: 2px;
   cursor: pointer;
   color: #AFAFAF;
@@ -111,6 +161,33 @@ ul#navigation li.current {
   background-color: #D5D5D5;
   color: #6B6B6B;
   border: 1px solid #AFAFAF;
+}
+
+
+/* Content */
+#title {
+  line-height: 30px;
+  border-bottom: 1px solid #C4C7C8;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.subheading h2 {
+  text-align: center;
+}
+
+.subheading p {
+  text-align: right;
+}
+
+.main-content {
+  margin-left: 50px;
+  width: 600px;
+  margin: 0 auto;
 }
 
 

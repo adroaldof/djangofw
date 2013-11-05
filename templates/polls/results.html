@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<div class="main">
+  <div id="title">
+    <h1>{% trans "Poll Results" %}</h1>
+  </div>
+  {% if poll %}
+  <div class="subheading">
+    <h2>{{ poll.question }}</h2>
+    <p>{% trans "Date" %}: {{ poll.pub_date|date:'d/m/Y' }}</p>
+  </div>
+  <div class="main-content">
+    <ul>
+    {% for choice in choices %}
+      <li>{{ choice.votes }} - {{ choice.choice_text }}</li>
+    {% endfor %}
+    <ul>
+  </div>
+  {% else %}
+    <p>{% trans "No poll found with identification '{{ poll_id }}'" %}
+  {% endif %}
+</div>
+{% endblock content %}

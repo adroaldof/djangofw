@@ -8,6 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Routes
     url(r'^$', 'djangofw.views.home', name='index'),
+    url(r'^polls/', include('polls.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

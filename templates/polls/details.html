@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<div class="main">
+  <div id="title">
+    <h1>{% trans "Poll Details" %}</h1>
+  </div>
+  {% if poll %}
+  <div class="subheading">
+    <h2>{{ poll.question }}</h2>
+    <p>{% trans "Date" %}: {{ poll.pub_date|date:'d/m/Y' }}</p>
+  </div>
+  <div class="main-content">
+    <form action="{% url 'polls-vote' poll.id %}" method="POST">
+      {% csrf_token %}
+      <ul>
+      {% for choice in poll.choice_set.all %}
+        <li>
+          <input type="radio" name="choice" value="{{ choice.id }}" id="choice{{ forloop.counter }}">
+          <label for="choice{{ forloop.counter }}"><span></span>{{ choice.choice_text }}</label>
+        </li>
+      {% endfor %}
+      </ul>
+      <div class="buttons">
+        <input type="submit" value="{% trans 'Vote' %}">
+      </div>
+    </form>
+  </div>
+  {% else %}
+    <p>{% trans "No poll found with identification '{{ poll_id }}'" %}
+  {% endif %}
+</div>
+{% endblock content %}
