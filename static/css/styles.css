@@ -234,6 +234,10 @@ ul#navigation li.current {
   margin: 0 auto;
 }
 
+.right-link {
+  float: right;
+  margin-left: 10px;
+}
 
 /* Footer */
 footer {
