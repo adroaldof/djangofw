@@ -17,4 +17,5 @@ urlpatterns = patterns('polls.views',
 urlpatterns += patterns('polls.views',
     url(r'^add$', 'create', name='polls-create'),
     url(r'^(?P<poll_id>\d+)/update$', 'update', name='polls-update'),
+    url(r'^(?P<poll_id>\d+)/delete$', 'delete', name='polls-delete'),
 )
