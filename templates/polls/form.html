@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extrastylesheets %}
+  <link type="text/css" rel="stylesheet" href="{% static 'css/jquery-ui-1.10.3.custom.css' %}" />
+  <link type="text/css" rel="stylesheet" href="{% static 'css/jquery-ui-timepicker-addon.css' %}" />
+{% endblock extrastylesheets %}
+
+{% block extrascripts %}
+  <script type="text/javascript" src="{% static 'js/manage.items.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-ui-timepicker-addon.js' %}"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('#id_pub_date').datetimepicker();
+    })
+  </script>
+{% endblock extrascripts %}
+
+{% block content %}
+<div class="main">
+  <div id="title">
+    <h1>{{ title }}</h1>
+  </div>
+  <form action="" method="POST" class="{{ class }}">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class='errors'>
+      <ul class='errorlist'><li>{% trans "Error: " %}{{ form.errors }}</li></ul>
+    </div>
+    {% endif %}
+    {% if formset.errors %}
+    <div class='errors'>
+      <ul class='errorlist'><li>{% trans "Error: " %}{{ formset.errors }}</li></ul>
+    </div>
+    {% endif %}
+    <div class="subheading">
+      {{ form.as_ul }}
+    </div>
+    <div class="subheading title">
+      <a id="add" href="#">{% trans "Add row" %}</a>
+    </div>
+    <div class="main-content">
+      {{ formset.management_form }}
+      {% for form in formset.forms %}
+      <div class="item">
+        {{ form.as_ul }}
+        <li>
+          <a class="delete" href="#">X</a>
+        </li>
+      </div>
+      {% endfor %}
+      <div class="buttons">
+        <input type="submit" value="{{ btn }}">
+        <input type="reset" value="{% trans 'Clear Up' %}"/>
+      </div>
+    </div>
+
+  </form>
+</div>
+{% endblock content %}

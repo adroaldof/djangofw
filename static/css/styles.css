@@ -64,18 +64,33 @@ p {
 }
 
 ul {
-  list-style-type: none;
   margin: 10px 0;
 }
 
-ul li {
+li {
+  display: block;
+  list-style-type: none;
   line-height: 20px;
 }
 
+
+
+/* Form */
 label {
-  display: inline-block;
+  width: 130px;
+  display: block;
   padding-top: 5px;
   font-size: 1.2em;
+  float: left;
+}
+
+label[for^="choice"] {
+  width: auto;
+  float: none;
+}
+
+.subheading>li, .item>li {
+  display: inline-block;
 }
 
 input[type="radio"] {
@@ -96,9 +111,24 @@ input[type="radio"]:checked + label span {
     background:url('../images/check_radio.png') -57px top no-repeat;
 }
 
-form input[type='reset'],
-form input[type='submit'],
-form input[type='button'] {
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  display: block;
+  width: 440px;
+  padding: 6px;
+  font-size: 14px;
+  color: #6B6B6B;
+  background-color: #D5D5D5;
+  border: 1px solid #AFAFAF;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
+input[type='reset'],
+input[type='submit'],
+input[type='button'] {
   float: right;
   width: 120px;
   padding: 5px;
@@ -111,6 +141,14 @@ form input[type='button'] {
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
+}
+
+.buttons {
+  width: 100%;
+  clear: both;
+  text-align: right;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 
@@ -176,6 +214,12 @@ ul#navigation li.current {
   margin: 0 auto;
 }
 
+.subheading.title {
+  border-bottom: 1px solid #C4C7C8;
+  margin: 10px auto;
+  text-align: right;
+}
+
 .subheading h2 {
   text-align: center;
 }
@@ -190,6 +234,10 @@ ul#navigation li.current {
   margin: 0 auto;
 }
 
+.right-link {
+  float: right;
+  margin-left: 10px;
+}
 
 /* Footer */
 footer {

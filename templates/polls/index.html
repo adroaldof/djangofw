@@ -14,7 +14,7 @@
   <div class="subheading">
     <ul>
       {% for poll in latests_poll_list %}
-        <li><a href="{% url 'polls-detail' poll.id %}">{{ poll.question }}</a></li>
+        <li><a href="{% url 'polls-detail' poll.id %}">{{ poll.question }}</a><a href="{% url 'polls-delete' poll.id%}" class="right-link">{% trans "Delete" %}</a><a href="{% url 'polls-update' poll.id %}" class="right-link">{% trans "Update" %}</a></li>
       {% endfor %}
     </ul>
   </div>
