@@ -14,3 +14,8 @@ class ChoiceForm(forms.ModelForm):
     class Meta:
         model = Choice
         exclude = ['poll', 'votes',]
+
+
+ChoiceFormset = inlineformset_factory(
+    Poll, Choice, form=ChoiceForm, can_delete=True, extra=0,
+)
