@@ -1,7 +1,12 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
+from django.forms.formsets import formset_factory, BaseFormSet
+from django.core.context_processors import csrf
+from django.utils.translation import ugettext_lazy as _
 
 from .models import Poll, Choice
+from .forms import PollForm, ChoiceForm
 
 def home(request):
     latests_poll_list = Poll.objects.order_by('-pub_date')[:15]
@@ -41,3 +46,37 @@ def vote(request, poll_id):
         return HttpResponseRedirect('/polls/' + poll_id + '/results')
 
 
+def create(request):
+    class RequiredFormSet(BaseFormSet):
+        def __init__(self, *args, **kwargs):
+            super(RequiredFormSet, self).__init__(*args, **kwargs)
+            for form in self.forms:
+                form.empty_permitted = False
+
+    Formset = formset_factory(
+        ChoiceForm, max_num=10, formset=RequiredFormSet
+    )
+
+    if request.method == 'POST':
+        main_form = PollForm(request.POST)
+        formset = Formset(request.POST, request.FILES)
+        if main_form.is_valid() and formset.is_valid():
+            poll, created = Poll.objects.get_or_create(
+                question=main_form.cleaned_data.get('question'),
+                pub_date=main_form.cleaned_data.get('pub_date')
+            )
+            for choice in formset.forms:
+                choice = choice.save(commit=False)
+                choice.poll = poll
+                choice.save()
+            return HttpResponseRedirect('/polls')
+
+    args = {}
+    args.update(csrf(request))
+    args['form'] = PollForm()
+    args['formset'] = Formset()
+    args['class'] = 'add'
+    args['title'] = _('Add New Poll')
+    args['btn'] = _('Add Poll')
+
+    return TemplateResponse(request, 'polls/form.html', args)
