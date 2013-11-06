@@ -38,11 +38,9 @@
     <div class="subheading">
       {{ form.as_ul }}
     </div>
-    {% if class == 'add' %}
     <div class="subheading title">
       <a id="add" href="#">{% trans "Add row" %}</a>
     </div>
-    {% endif %}
     <div class="main-content">
       {{ formset.management_form }}
       {% for form in formset.forms %}
