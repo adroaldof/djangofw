@@ -102,3 +102,9 @@ def update(request, poll_id):
     return TemplateResponse(request, 'polls/form.html', args)
 
 
+def delete(request, poll_id):
+    poll = get_object_or_404(Poll, id=poll_id)
+
+    if poll:
+        poll.delete()
+        return HttpResponseRedirect('/polls')
