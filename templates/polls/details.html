@@ -13,7 +13,7 @@
     <p>{% trans "Date" %}: {{ poll.pub_date|date:'d/m/Y' }}</p>
   </div>
   <div class="main-content">
-    <form action="{% url 'polls-vote' poll.id %}" method="POST">
+    <form action="{% url 'polls-vote' poll.id %}" method="POST" class="vote">
       {% csrf_token %}
       <ul>
       {% for choice in poll.choice_set.all %}
