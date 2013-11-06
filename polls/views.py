@@ -86,8 +86,10 @@ def update(request, poll_id):
     poll = get_object_or_404(Poll, id=poll_id)
 
     if request.method == 'POST':
+        form = PollForm(request.POST or None, instance=poll)
         formset = ChoiceFormset(request.POST, request.FILES, instance=poll)
-        if formset.is_valid():
+        if form.is_valid() and formset.is_valid():
+            form.save()
             formset.save()
             return HttpResponseRedirect('/polls')
 
