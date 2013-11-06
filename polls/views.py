@@ -6,7 +6,7 @@ from django.core.context_processors import csrf
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Poll, Choice
-from .forms import PollForm, ChoiceForm
+from .forms import PollForm, ChoiceForm, ChoiceFormset
 
 def home(request):
     latests_poll_list = Poll.objects.order_by('-pub_date')[:15]
@@ -80,3 +80,25 @@ def create(request):
     args['btn'] = _('Add Poll')
 
     return TemplateResponse(request, 'polls/form.html', args)
+
+
+def update(request, poll_id):
+    poll = get_object_or_404(Poll, id=poll_id)
+
+    if request.method == 'POST':
+        formset = ChoiceFormset(request.POST, request.FILES, instance=poll)
+        if formset.is_valid():
+            formset.save()
+            return HttpResponseRedirect('/polls')
+
+    args = {}
+    args.update(csrf(request))
+    args['form'] = PollForm(instance=poll)
+    args['formset'] = ChoiceFormset(instance=poll)
+    args['class'] = 'update'
+    args['title'] = _('Update Poll')
+    args['btn'] = _('Update Poll')
+
+    return TemplateResponse(request, 'polls/form.html', args)
+
+
