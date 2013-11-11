@@ -2,11 +2,12 @@
 
 This is a practical example to show how to work with Django Framework.
 
-The present tutorial assumes that you are familiar with command line tools and Git, some modules are used here just run this project with no intention to show what it does and how it works.
+The present tutorial assumes that you are familiar with command line tools and Git, some modules are used here just run this project, with no intention to show what it does and how it works.
+
 
 ##Enviroment Setup
 ---
-###Mac OS X
+###Mac OS X 10.7 or latter
 
 1. Check if you have `Easy Install` on your machine
 
@@ -26,11 +27,46 @@ The present tutorial assumes that you are familiar with command line tools and G
 
         sudo easy_install pip
 
-5. Install `Virtual Env` and `Virtual Env Wrapper`
+5. [Install Git for Mac OS X](https://help.github.com/articles/set-up-git#platform-mac "GitHub for Mac")
+
+
+---
+###Ubuntu 12.04 or newer
+1. Become root user
+
+        sudo su
+
+2. Update package list
+
+        apt-get update
+
+3. Install needed packages
+
+        apt-get install build-essential python2.7-dev
+
+4. Install Python pip
+
+        sudo apt-get install python-pip
+
+5. Install git
+
+        apt-get install git
+
+6. Leave root
+
+        exit
+
+
+---
+
+---
+###Fetching GitHub Repo
+
+1. Install `Virtual Env` and `Virtual Env Wrapper`
 
         sudo pip install virtualenv virtualenvwrapper
 
-6. Add the follow lines to the end of your `.bash_profile` or `.profile` file
+2. Add the follow lines to the end of your `.bash_profile` or `.profile` file
 
         # set where virutal environments will live
         export WORKON_HOME=$HOME/.virtualenvs
@@ -46,45 +82,47 @@ The present tutorial assumes that you are familiar with command line tools and G
             echo "WARNING: Can't find virtualenvwrapper.sh"
         fi
 
-7. Create a virtual enviroment project
+3. Create a virtual enviroment project
 
         # You can give the same project name or any name you want
         # This command will create and activate a new virtualenv
+        # You can note a `(djangofw)` in front of your command line header
+        # (djangofw)user@machine$
         mkvirtualenv djangofw
 
-        # To activate
-        # It will add a `(djangofw)` in front of your command line header
-        # (djangofw)user@machine$
+        # To activate another time
         workon djangofw
-        
-        # To deactivate
+
+        # To deactivate when you end working
         deactivate
 
----
+4. Chose a place to checkout your local repo and access it
 
----
-###Fetching GitHub Repo
+        # Sugestion is to create a folder called 'workspace' but you can chose whatever folder you want
+        mkdir ~/workspace
+        cd ~/workspace
 
-1. Chose a place to checkout your local repo
-2. Clone `djangofw` repo
+5. Clone `djangofw` repo
 
+        # Make sure you have a GitHub account with correct ssh key configurated
         git clone git@github.com:adroaldof/djangofw.git
 
-3. Access you project folder
+6. Access you project folder
 
         cd djangofw
 
-4. Activate your virtual env
+7. Activate your virtual env
 
         workon djangofw
 
-5. Install needed requirements modules
+8. Install needed requirements modules
 
         pip install -r requirements.txt
 
-6. Make a database synchronization
+9. Make a database synchronization
 
         python manage.py syncdb
+
 
 ---
 ###And you are good to go
