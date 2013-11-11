@@ -7,4 +7,5 @@ urlpatterns = patterns('blog.views',
     url(r'^post.form$', 'post_form',  name='blog-post-form'),
     url(r'^category/(?P<slug>[^\.]+)', 'categories', name='blog-category'),
     url(r'^category.form$', 'category_form', name='blog-category-form'),
+    url(r'^category.delete/(?P<category_id>\d+)', 'category_delete', name='blog-category-delete'),
 )

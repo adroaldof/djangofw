@@ -66,3 +66,9 @@ def category_form(request):
     return TemplateResponse(request, 'blog/form.html', args)
 
 
+def category_delete(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+
+    if category:
+        category.delete()
+        return HttpResponseRedirect('/blog')
