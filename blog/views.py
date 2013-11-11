@@ -2,7 +2,8 @@ from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.response import TemplateResponse
-from .forms import CategoryForm
+
+from .forms import BlogForm, CategoryForm
 from .models import Blog, Category
 
 
@@ -20,6 +21,23 @@ def posts(request, slug):
     return TemplateResponse(request, 'blog/posts.html', {
         'post': post,
     })
+
+
+def post_form(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/blog')
+
+    args = {}
+    args.update(csrf(request))
+    args['form'] = BlogForm()
+    args['class'] = 'add'
+    args['title'] = 'Add New Post'
+    args['btn'] = 'Add Post'
+
+    return TemplateResponse(request, 'blog/form.html', args)
 
 
 def categories(request, slug):
