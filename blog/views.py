@@ -1,4 +1,5 @@
 # Create your views here.
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template.response import TemplateResponse
 from .models import Blog, Category
 
@@ -9,6 +10,13 @@ def index(request):
     return TemplateResponse(request, 'blog/index.html', {
         'categories': categories,
         'posts': posts,
+    })
+
+
+def posts(request, slug):
+    post = get_object_or_404(Blog, slug=slug)
+    return TemplateResponse(request, 'blog/posts.html', {
+        'post': post,
     })
 
 
