@@ -40,6 +40,14 @@ def post_form(request):
     return TemplateResponse(request, 'blog/form.html', args)
 
 
+def post_delete(request, post_id):
+    post = get_object_or_404(Blog, id=post_id)
+
+    if post:
+        post.delete()
+        return HttpResponseRedirect('/blog')
+
+
 def categories(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = Blog.objects.filter(category=category)[:5]
