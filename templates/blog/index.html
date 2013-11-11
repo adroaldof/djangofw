@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<div class="main">
+  <div id="title">
+    <h1>{% trans "Categories" %}</h1>
+  </div>
+  <div class="subheading">
+    <div class="subheading title">
+      <a href="{% url 'blog-category-form' %}">{% trans "Add category" %}</a>
+    </div>
+    {% if categories %}
+    <ul>
+      {% for category in categories %}
+      <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a><a href="{% url 'blog-category-delete' category.id %}" class="right-link">{% trans "Delete" %}</a></li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>{% trans "There are no categories" %}</p>
+    {% endif %}
+  </div>
+  <div id="title">
+    <h1>{% trans "Posts" %}</h1>
+  </div>
+  <div class="subheading">
+    <div class="subheading title">
+      <a href="{% url 'blog-post-form' %}">{% trans "Add Post" %}</a>
+    </div>
+    {% if posts %}
+      <ul>
+      {% for post in posts %}
+        <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a><a href="{% url 'blog-post-delete' post.id %}" class="right-link">{% trans "Delete" %}</a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>{% trans "There are no posts" %}</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
