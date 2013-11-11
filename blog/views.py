@@ -20,3 +20,12 @@ def posts(request, slug):
     })
 
 
+def categories(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    posts = Blog.objects.filter(category=category)[:5]
+    return TemplateResponse(request, 'blog/categories.html', {
+        'category': category,
+        'posts': posts,
+    })
+
+
