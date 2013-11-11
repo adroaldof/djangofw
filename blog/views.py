@@ -1,6 +1,8 @@
-# Create your views here.
+from django.http import HttpResponseRedirect
+from django.core.context_processors import csrf
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.response import TemplateResponse
+from .forms import CategoryForm
 from .models import Blog, Category
 
 
@@ -27,5 +29,22 @@ def categories(request, slug):
         'category': category,
         'posts': posts,
     })
+
+
+def category_form(request):
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/blog')
+
+    args = {}
+    args.update(csrf(request))
+    args['form'] = CategoryForm()
+    args['class'] = 'add'
+    args['title'] = 'Add New Category'
+    args['btn'] = 'Add Category'
+
+    return TemplateResponse(request, 'blog/form.html', args)
 
 
