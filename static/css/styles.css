@@ -94,6 +94,26 @@ label[for^="choice"] {
   display: inline-block;
 }
 
+select {
+  width: 455px;
+  height: 30px;
+  padding: 5px;
+  background-color: #DBDCDD;
+  border: 1px solid #C4C7C8;
+}
+
+textarea {
+  width: 440px;
+  padding: 6px;
+  font-size: 14px;
+  color: #6B6B6B;
+  background-color: #D5D5D5;
+  border-color: #AFAFAF;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
 input[type="radio"] {
   display: none;
 }
