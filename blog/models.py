@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import permalink
+from django.utils.text import slugify
 
 
 class Category(models.Model):
@@ -8,6 +9,11 @@ class Category(models.Model):
 
     def __unicode__(self):
         return '%s' % self.title
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title)
+        super(Category, self).save(*args, **kwargs)
 
     @permalink
     def get_absolute_url(self):
@@ -23,6 +29,11 @@ class Blog(models.Model):
 
     def __unicode__(self):
         return '%s' % self.title
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title)
+        super(Blog, self).save(*args, **kwargs)
 
     @permalink
     def get_absolute_url(self):
