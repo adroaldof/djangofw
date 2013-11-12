@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DjangoFW\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-11 17:00-0200\n"
+"PO-Revision-Date: 2013-11-12 01:34-0300\n"
+"Last-Translator: Adroaldo de Andrade <adroaldof@gmail.com>\n"
+"Language-Team: DjangoFW <adroaldof@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.7\n"
+"Language: en\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: accounts/models.py:7
+msgid "Male"
+msgstr "Masculino"
+
+#: accounts/models.py:8
+msgid "Female"
+msgstr "Feminino"
+
+#: djangofw/settings.py:44
+msgid "English"
+msgstr "Inglês"
+
+#: djangofw/settings.py:45
+msgid "Portuguese"
+msgstr "Português"
+
+#: polls/models.py:10
+msgid "Date published"
+msgstr "Data de publicação"
+
+#: polls/models.py:20
+msgid "Published recently"
+msgstr "Publicado recentemente"
+
+#: polls/views.py:79
+msgid "Add New Poll"
+msgstr "Adicionar nova votação"
+
+#: polls/views.py:80 templates/polls/index.html:11
+msgid "Add Poll"
+msgstr "Adicionar Votação"
+
+#: polls/views.py:101 polls/views.py:102
+msgid "Update Poll"
+msgstr "Atualizar Votação"
+
+#: templates/404.html:7
+msgid "Oops! Bad request"
+msgstr "Oops! Página não encontrada"
+
+#: templates/404.html:9
+msgid "The page you are looking for doesn't exists"
+msgstr "Parece que a página que você está procurando não existe"
+
+#: templates/500.html:7
+msgid "Oops! Server error"
+msgstr "Oops! Erro no servidor"
+
+#: templates/500.html:9
+msgid ""
+"Appears to be that someone is working, or not. Try again in a few minutes."
+msgstr ""
+"Parece que alguém está trabalhando, ou melhor, não está. Tente novamente em "
+"alguns minutos."
+
+#: templates/base.html:34
+msgid "Home"
+msgstr "Início"
+
+#: templates/base.html:35
+msgid "Polls"
+msgstr "Votações"
+
+#: templates/base.html:36
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/index.html:8
+msgid "Django Framework"
+msgstr "Django Framework"
+
+#: templates/index.html:10
+msgid "This is a Django Framework main page"
+msgstr "Esta é a página inicial do Django Framework"
+
+#: templates/blog/categories.html:7 templates/blog/index.html:8
+msgid "Categories"
+msgstr "Categorias"
+
+#: templates/blog/form.html:15 templates/polls/form.html:30
+#: templates/polls/form.html.py:35
+msgid "Error: "
+msgstr "Erro:"
+
+#: templates/blog/form.html:22 templates/polls/form.html:56
+msgid "Clear Up"
+msgstr "Limpar"
+
+#: templates/blog/index.html:12
+msgid "Add category"
+msgstr "Adicionar categoria"
+
+#: templates/blog/index.html:17 templates/blog/index.html.py:34
+#: templates/polls/index.html:17
+msgid "Delete"
+msgstr "Deletar"
+
+#: templates/blog/index.html:21
+msgid "There are no categories"
+msgstr "Não há categorias"
+
+#: templates/blog/index.html:25
+msgid "Posts"
+msgstr "Postagens"
+
+#: templates/blog/index.html:29
+msgid "Add Post"
+msgstr "Adicionar Postagem"
+
+#: templates/blog/index.html:38
+msgid "There are no posts"
+msgstr "Não há postagens"
+
+#: templates/polls/details.html:8
+msgid "Poll Details"
+msgstr "Detalhes de Votação"
+
+#: templates/polls/details.html:13 templates/polls/results.html:13
+msgid "Date"
+msgstr "Data"
+
+#: templates/polls/details.html:27
+msgid "Vote"
+msgstr "Voto"
+
+#: templates/polls/details.html:32 templates/polls/results.html:23
+msgid "No poll found with identification '{{ poll_id }}'"
+msgstr "Não foi encontrada votação com a identificação '{{ poll_id }}'"
+
+#: templates/polls/form.html:42
+msgid "Add row"
+msgstr "Adicionar linha"
+
+#: templates/polls/index.html:8
+msgid "Available Polls"
+msgstr "Votações Disponíveis"
+
+#: templates/polls/index.html:17
+msgid "Update"
+msgstr "Atualizar"
+
+#: templates/polls/index.html:23
+msgid "No polls were found"
+msgstr "Não foi encontrado nenhuma votação"
+
+#: templates/polls/results.html:8
+msgid "Poll Results"
+msgstr "Resultados de Votação"
