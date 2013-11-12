@@ -1,7 +1,8 @@
-from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
+from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.response import TemplateResponse
+from django.utils.translation import ugettext_lazy as _
 
 from .forms import BlogForm, CategoryForm
 from .models import Blog, Category
@@ -34,8 +35,8 @@ def post_form(request):
     args.update(csrf(request))
     args['form'] = BlogForm()
     args['class'] = 'add'
-    args['title'] = 'Add New Post'
-    args['btn'] = 'Add Post'
+    args['title'] = _('Add New Post')
+    args['btn'] = _('Add Post')
 
     return TemplateResponse(request, 'blog/form.html', args)
 
@@ -68,8 +69,8 @@ def category_form(request):
     args.update(csrf(request))
     args['form'] = CategoryForm()
     args['class'] = 'add'
-    args['title'] = 'Add New Category'
-    args['btn'] = 'Add Category'
+    args['title'] = _('Add New Category')
+    args['btn'] = _('Add Category')
 
     return TemplateResponse(request, 'blog/form.html', args)
 

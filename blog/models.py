@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import permalink
 from django.utils.text import slugify
+from django.utils.translation import ugettext_lazy as _
 
 
 class Category(models.Model):
@@ -21,11 +22,11 @@ class Category(models.Model):
 
 
 class Blog(models.Model):
-    title = models.CharField(max_length=100, unique=True)
+    title = models.CharField(_('title'), max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
-    body = models.TextField()
+    body = models.TextField(_('body'))
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, verbose_name=_('category'))
 
     def __unicode__(self):
         return '%s' % self.title
