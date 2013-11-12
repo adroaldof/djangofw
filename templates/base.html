@@ -69,12 +69,38 @@
     <div id="trademark">
       <p>DjangoFW 2013 &reg.</p>
     </div>
-    <div class="footer_content">
-      <div class="footer_left">
+    <div id="footer_content">
+      <div class="column">
+        <h5>{% trans "Useful Links" %}</h5>
+        <ul>
+          <li><a href="https://www.djangoproject.com/" target="_blank">Dango Project</a></li>
+          <li><a href="https://docs.djangoproject.com/en/1.6/" target="_blank">Django Documentation</a></li>
+          <li><a href="http://pinaxproject.com/" target="_blank">Pinax</a></li>
+        </ul>
       </div>
-      <div class="footer_center">
+      <div class="column">
+        <h5>{% trans "English Tutorials" %}</h5>
+          <ul>
+            <li><a href="https://docs.djangoproject.com/en/dev/intro/tutorial01/" target="_blank">Write Your Fist App</a></li>
+            <li><a href="http://effectivedjango.com/" target="_blank">Effective Django</a></li>
+            <li><a href="http://www.youtube.com/playlist?list=PLxxA5z-8B2xk4szCgFmgonNcCboyNneMD" target="_blank">Teach Django from Basics (Mike Hibbert)</a></li>
+          </ul>
       </div>
-      <div class="footer_right">
+      <div class="column">
+        <h5>{% trans "Portuguese Tutorials" %}</h5>
+          <ul>
+            <li><a href="http://docs.djangobrasil.org/intro/tutorial01.html" target="_blank">Escrevendo sua Primeira Aplicação Django</a></li>
+            <li><a href="http://www.aprendendodjango.com/" target="_blank">Aprendendo Django</a></li>
+          </ul>
+      </div>
+      <div class="column">
+        <h5>{% trans "Good to Know About" %}</h5>
+        <ul>
+          <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+          <li><a href="http://www.virtualenv.org/en/latest/" target="_blank">VirtualEnv</a></li>
+          <li><a href="http://south.aeracode.org/" target="_blank">South</a></li>
+          <li></li>
+        </ul>
       </div>
     </div>
   {% endblock footer %}
