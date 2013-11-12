@@ -39,12 +39,12 @@ h4 {
 }
 
 h5 {
-  font-size: 1.7em;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
 h6 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
 }
 
@@ -62,6 +62,7 @@ a:hover {
 
 p {
   padding: 5px 0;
+  line-height: 19px;
 }
 
 ul {
@@ -154,7 +155,7 @@ input[type='reset'],
 input[type='submit'],
 input[type='button'] {
   float: right;
-  width: 120px;
+  width: 150px;
   padding: 5px;
   margin: 10px 0 0 5px;
   font-size: 14px;
@@ -237,6 +238,30 @@ ul#navigation li.current {
 
 /* Content */
 
+#center-box {
+  margin: 0 auto -15px auto;
+  width: 750px;
+}
+
+article {
+  float: left;
+  margin: 9px;
+  width: 340px;
+  padding: 5px;
+}
+
+article h2 {
+  margin: 5px;
+}
+
+article p {
+  text-align: none;
+}
+
+article p a {
+  text-decoration: underline;
+}
+
 #title {
   margin-bottom: 15px;
   line-height: 30px;
@@ -244,7 +269,7 @@ ul#navigation li.current {
 }
 
 .subheading {
-  width: 600px;
+  width: 750px;
   margin: 0 auto;
 }
 
@@ -293,5 +318,25 @@ footer {
 
 #footer_content {
   width: 960px;
-  min-height: 300px;
+  min-height: 200px;
+  margin: 0 auto;
+}
+
+#footer_content .column {
+  float: left;
+  margin: 0 5px 50px 5px;
+  width: 230px;
+}
+
+#footer_content .column h5 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+#footer_content .column li {
+  font-size: 0.8em;
+}
+
+#footer_content .column a {
+  color: #C4C7C8;
 }
