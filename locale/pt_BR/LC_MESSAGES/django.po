@@ -7,25 +7,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DjangoFW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-11 17:00-0200\n"
-"PO-Revision-Date: 2013-11-12 01:34-0300\n"
+"POT-Creation-Date: 2013-11-12 17:37-0200\n"
+"PO-Revision-Date: 2013-11-12 17:38-0300\n"
 "Last-Translator: Adroaldo de Andrade <adroaldof@gmail.com>\n"
 "Language-Team: DjangoFW <adroaldof@gmail.com>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.7\n"
-"Language: en\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: accounts/models.py:7
-msgid "Male"
-msgstr "Masculino"
+#: accounts/admin.py:16
+msgid "Personal info"
+msgstr "Informações pessoais"
 
-#: accounts/models.py:8
-msgid "Female"
-msgstr "Feminino"
+#: accounts/admin.py:17
+msgid "Permissions"
+msgstr "Permissões"
+
+#: accounts/admin.py:19
+msgid "Important dates"
+msgstr "Datas importantes"
+
+#: accounts/models.py:18
+msgid "The given email must be set"
+msgstr "O email deve ser definido"
+
+#: accounts/models.py:44
+msgid "email address"
+msgstr "endereço de email"
+
+#: accounts/models.py:45
+msgid "first name"
+msgstr "Primeiro nome"
+
+#: accounts/models.py:46
+msgid "last name"
+msgstr "Último nome"
+
+#: accounts/models.py:47
+msgid "staff status"
+msgstr "staff status"
+
+#: accounts/models.py:48
+msgid "Designates whether the user can log into this admin site."
+msgstr "Determina se o usuário pode entrar neste site de administração."
+
+#: accounts/models.py:49
+msgid "active"
+msgstr "ativo"
+
+#: accounts/models.py:50
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Designa se este usuário deve ser tratado como ativo. Desmarcar este em vez "
+"de excluir contas."
+
+#: accounts/models.py:52
+msgid "date joined"
+msgstr "data de afiliação"
+
+#: accounts/models.py:60
+msgid "user"
+msgstr "usuário"
+
+#: accounts/models.py:61
+msgid "users"
+msgstr "usuários"
+
+#: blog/models.py:25
+msgid "title"
+msgstr "título"
+
+#: blog/models.py:27
+msgid "body"
+msgstr "Corpo"
+
+#: blog/models.py:29
+msgid "category"
+msgstr "categoria"
+
+#: blog/views.py:38
+msgid "Add New Post"
+msgstr "Adicionar Novo Post"
+
+#: blog/views.py:39 templates/blog/index.html:29
+msgid "Add Post"
+msgstr "Adicionar Post"
+
+#: blog/views.py:72
+msgid "Add New Category"
+msgstr "Adicionar Nova Categoria "
+
+#: blog/views.py:73 templates/blog/index.html:12
+msgid "Add Category"
+msgstr "Adicionar Categoria"
 
 #: djangofw/settings.py:44
 msgid "English"
@@ -86,13 +166,59 @@ msgstr "Votações"
 msgid "Blog"
 msgstr "Blog"
 
+#: templates/base.html:74
+msgid "Useful Links"
+msgstr "Links Úteis"
+
+#: templates/base.html:82
+msgid "English Tutorials"
+msgstr "Tutoriais em Inglês"
+
+#: templates/base.html:90
+msgid "Portuguese Tutorials"
+msgstr "Tutoriais em Português"
+
+#: templates/base.html:97
+msgid "Good to Know About"
+msgstr "Bom Saber Sobre"
+
 #: templates/index.html:8
 msgid "Django Framework"
 msgstr "Django Framework"
 
-#: templates/index.html:10
-msgid "This is a Django Framework main page"
-msgstr "Esta é a página inicial do Django Framework"
+#: templates/index.html:12
+msgid "What is this page for"
+msgstr "Motivo da página"
+
+#: templates/index.html:13
+msgid ""
+"This page was built to show a working Django project to a Web Development "
+"Class"
+msgstr ""
+"Esta página foi construída para mostrar o funcionamento de um projeto Django "
+"para a classe de Desenvolvimento Web"
+
+#: templates/index.html:14
+msgid ""
+"The source code can be found at <a href='https://github.com/adroaldof/"
+"djangofw' target='_blank'>DjangoFW GitHub Repo</a> and you can use it as a "
+"guide to build your own Project"
+msgstr ""
+"O código-fonte pode ser encontrado em <a href='https://github.com/adroaldof/"
+"djangofw' target='_blank'>DjangoFW GitHub Repo</a> e você pode usá-lo como "
+"um guia para construir o seu próprio projeto"
+
+#: templates/index.html:17
+msgid "Contribute"
+msgstr "Contribua"
+
+#: templates/index.html:18
+msgid ""
+"You can help to make this guide better. If you want contribute with your "
+"thoughts and knowledge be welcome"
+msgstr ""
+"Você pode ajudar a fazer este guia melhor. Se você quiser contribuir com os "
+"seus pensamentos e conhecimentos será bem-vindo"
 
 #: templates/blog/categories.html:7 templates/blog/index.html:8
 msgid "Categories"
@@ -107,10 +233,6 @@ msgstr "Erro:"
 msgid "Clear Up"
 msgstr "Limpar"
 
-#: templates/blog/index.html:12
-msgid "Add category"
-msgstr "Adicionar categoria"
-
 #: templates/blog/index.html:17 templates/blog/index.html.py:34
 #: templates/polls/index.html:17
 msgid "Delete"
@@ -123,10 +245,6 @@ msgstr "Não há categorias"
 #: templates/blog/index.html:25
 msgid "Posts"
 msgstr "Postagens"
-
-#: templates/blog/index.html:29
-msgid "Add Post"
-msgstr "Adicionar Postagem"
 
 #: templates/blog/index.html:38
 msgid "There are no posts"
@@ -167,3 +285,12 @@ msgstr "Não foi encontrado nenhuma votação"
 #: templates/polls/results.html:8
 msgid "Poll Results"
 msgstr "Resultados de Votação"
+
+#~ msgid "Male"
+#~ msgstr "Masculino"
+
+#~ msgid "Female"
+#~ msgstr "Feminino"
+
+#~ msgid "This is a Django Framework main page"
+#~ msgstr "Esta é a página inicial do Django Framework"
