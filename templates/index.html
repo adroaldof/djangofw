@@ -7,6 +7,17 @@
   <div id="title">
     <h1>{% trans "Django Framework" %}</h1>
   </div>
-  <p>{% trans "This is a Django Framework main page" %}</p>
+  <div id="center-box">
+    <article>
+      <h2>{% trans "What is this page for" %}</h2>
+      <p>{% trans "This page was built to show a working Django project to a Web Development Class" %}</p>
+      <p>{% trans "The source code can be found at <a href='https://github.com/adroaldof/djangofw' target='_blank'>DjangoFW GitHub Repo</a> and you can use it as a guide to build your own Project" %}</p>
+    </article>
+    <article>
+      <h2>{% trans "Contribute" %}</h2>
+      <p>{% trans "You can help to make this guide better. If you want contribute with your thoughts and knowledge be welcome" %}</p>
+      <p><a href='https://github.com/adroaldof/djangofw' target='_blank'>DjangoFW GitHub Repo</a></p>
+    </article>
+  </div>
 </div>
 {% endblock content %}
