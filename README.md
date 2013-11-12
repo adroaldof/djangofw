@@ -29,6 +29,22 @@ The present tutorial assumes that you are familiar with command line tools and G
 
 5. [Install Git for Mac OS X](https://help.github.com/articles/set-up-git#platform-mac "GitHub for Mac")
 
+6. Check if you have a `Homebrew` on your machine
+
+        brew --version
+
+7. If you get an answer that looks like line bellow you can go to step #9
+
+        0.9.5
+
+8. Install `Homebrew` [Homebrew](http://mxcl.github.com/homebrew/) install
+
+9. Once you've got `Homebrew` you can install `gettext`:
+
+        brew update
+        brew install gettext
+        brew link gettext
+
 
 ---
 ###Ubuntu 12.04 or newer
@@ -42,7 +58,7 @@ The present tutorial assumes that you are familiar with command line tools and G
 
 3. Install needed packages
 
-        apt-get install build-essential python2.7-dev
+        apt-get install build-essential python2.7-dev gettext
 
 4. Install Python pip
 
@@ -60,7 +76,7 @@ The present tutorial assumes that you are familiar with command line tools and G
 ---
 
 ---
-###Fetching GitHub Repo
+###Virtual Env and Fetching GitHub Repo
 
 1. Install `Virtual Env` and `Virtual Env Wrapper`
 
@@ -123,6 +139,9 @@ The present tutorial assumes that you are familiar with command line tools and G
 
         python manage.py syncdb
 
+10. Compile translation files
+
+        python manage.py compilemessages -a
 
 ---
 ###And you are good to go
