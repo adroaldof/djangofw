@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DjangoFW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-12 17:37-0200\n"
-"PO-Revision-Date: 2013-11-12 17:38-0300\n"
+"POT-Creation-Date: 2014-12-06 17:49-0200\n"
+"PO-Revision-Date: 2014-11-17 18:45-0300\n"
 "Last-Translator: Adroaldo de Andrade <adroaldof@gmail.com>\n"
 "Language-Team: DjangoFW <adroaldof@gmail.com>\n"
 "Language: en\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: accounts/admin.py:16
@@ -107,13 +107,25 @@ msgstr "Adicionar Nova Categoria "
 msgid "Add Category"
 msgstr "Adicionar Categoria"
 
-#: djangofw/settings.py:44
+#: djangofw/settings.py:37
 msgid "English"
 msgstr "Inglês"
 
-#: djangofw/settings.py:45
+#: djangofw/settings.py:38
 msgid "Portuguese"
 msgstr "Português"
+
+#: djangofw/settings.py:39
+msgid "French"
+msgstr "Francês"
+
+#: djangofw/settings.py:40
+msgid "German"
+msgstr "Alemão"
+
+#: djangofw/settings.py:41
+msgid "Korean"
+msgstr "Koreano"
 
 #: polls/models.py:10
 msgid "Date published"
@@ -182,15 +194,15 @@ msgstr "Tutoriais em Português"
 msgid "Good to Know About"
 msgstr "Bom Saber Sobre"
 
-#: templates/index.html:8
+#: templates/index.html:10
 msgid "Django Framework"
 msgstr "Django Framework"
 
-#: templates/index.html:12
+#: templates/index.html:14
 msgid "What is this page for"
 msgstr "Motivo da página"
 
-#: templates/index.html:13
+#: templates/index.html:15
 msgid ""
 "This page was built to show a working Django project to a Web Development "
 "Class"
@@ -198,7 +210,7 @@ msgstr ""
 "Esta página foi construída para mostrar o funcionamento de um projeto Django "
 "para a classe de Desenvolvimento Web"
 
-#: templates/index.html:14
+#: templates/index.html:16
 msgid ""
 "The source code can be found at <a href='https://github.com/adroaldof/"
 "djangofw' target='_blank'>DjangoFW GitHub Repo</a> and you can use it as a "
@@ -208,17 +220,30 @@ msgstr ""
 "djangofw' target='_blank'>DjangoFW GitHub Repo</a> e você pode usá-lo como "
 "um guia para construir o seu próprio projeto"
 
-#: templates/index.html:17
+#: templates/index.html:19
 msgid "Contribute"
 msgstr "Contribua"
 
-#: templates/index.html:18
+#: templates/index.html:20
 msgid ""
 "You can help to make this guide better. If you want contribute with your "
 "thoughts and knowledge be welcome"
 msgstr ""
 "Você pode ajudar a fazer este guia melhor. Se você quiser contribuir com os "
 "seus pensamentos e conhecimentos será bem-vindo"
+
+#: templates/index.html:24 templates/polls/details.html:13
+#: templates/polls/results.html:13
+msgid "Date"
+msgstr "Data"
+
+#: templates/index.html:25
+msgid "Hour"
+msgstr "Hora"
+
+#: templates/index.html:26
+msgid "Price"
+msgstr "Preço"
 
 #: templates/blog/categories.html:7 templates/blog/index.html:8
 msgid "Categories"
@@ -253,10 +278,6 @@ msgstr "Não há postagens"
 #: templates/polls/details.html:8
 msgid "Poll Details"
 msgstr "Detalhes de Votação"
-
-#: templates/polls/details.html:13 templates/polls/results.html:13
-msgid "Date"
-msgstr "Data"
 
 #: templates/polls/details.html:27
 msgid "Vote"

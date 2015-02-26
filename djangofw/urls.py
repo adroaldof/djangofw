@@ -7,11 +7,15 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Routes
+    # http://localhost:8000
     url(r'^$', 'djangofw.views.home', name='index'),
+
+    # http://localhost:8000/polls/
     url(r'^polls/', include('polls.urls')),
     url(r'^blog/', include('blog.urls')),
 
     # Route to change language
+    # http://localhost:8000/i18n
     (r'^i18n/', include('django.conf.urls.i18n')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -43,6 +43,9 @@ TIME_ZONE = 'America/Sao_Paulo'
 LANGUAGES = (
     ('en', _('English')),
     ('pt-br', _('Portuguese')),
+    ('fr', _('French')),
+    ('de', _('German')),
+    ('ko', _('Korean')),
 )
 
 LOCALE_PATHS = (
@@ -150,6 +153,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'djangofw',
     'polls',
     'blog',
 )

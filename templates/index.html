@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load currency_formater from custom_tags %}
 {% load i18n %}
+{% load l10n %}
 
 {% block content %}
 <div class="main">
@@ -17,6 +19,11 @@
       <h2>{% trans "Contribute" %}</h2>
       <p>{% trans "You can help to make this guide better. If you want contribute with your thoughts and knowledge be welcome" %}</p>
       <p><a href='https://github.com/adroaldof/djangofw' target='_blank'>DjangoFW GitHub Repo</a></p>
+    </article>
+    <article>
+      <p>{% trans "Date" %}: {{ today | date:'SHORT_DATE_FORMAT' }}</p>
+      <p>{% trans "Hour" %}: {{ today.time }}</p>
+      <p>{% trans "Price" %}: {% currency_formater price %}</p>
     </article>
   </div>
 </div>
